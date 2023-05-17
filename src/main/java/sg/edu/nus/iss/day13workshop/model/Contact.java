@@ -1,4 +1,4 @@
-package sg.edu.nus.iss.day13demo.model;
+package sg.edu.nus.iss.day13workshop.model;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;

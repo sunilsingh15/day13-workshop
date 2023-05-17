@@ -1,4 +1,4 @@
-package sg.edu.nus.iss.day13demo.controller;
+package sg.edu.nus.iss.day13workshop.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import jakarta.validation.Valid;
-import sg.edu.nus.iss.day13demo.model.Contact;
-import sg.edu.nus.iss.day13demo.utility.Utility;
+import sg.edu.nus.iss.day13workshop.model.Contact;
+import sg.edu.nus.iss.day13workshop.utility.Utility;
 
 @Controller
 @RequestMapping(path = "/")

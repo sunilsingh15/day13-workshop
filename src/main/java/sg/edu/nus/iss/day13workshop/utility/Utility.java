@@ -1,4 +1,4 @@
-package sg.edu.nus.iss.day13demo.utility;
+package sg.edu.nus.iss.day13workshop.utility;
 
 import org.springframework.stereotype.Component;
 
