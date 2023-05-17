@@ -3,8 +3,8 @@ package sg.edu.nus.iss.day13workshop;
 import org.springframework.boot.DefaultApplicationArguments;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
 import java.util.List;
+import sg.edu.nus.iss.day13workshop.utility.*;
 
 @SpringBootApplication
 public class Day13WorkshopApplication {
@@ -18,7 +18,7 @@ public class Day13WorkshopApplication {
 		System.out.println(opsVal);
 
 		if (opsVal != null) {
-			createDir(opsVal.get(0));
+			Utility.createDir(opsVal.get(0));
 		} else {
 			System.exit(1);
 		}
@@ -26,7 +26,5 @@ public class Day13WorkshopApplication {
 		app.run(args);
 	}
 
-	private static void createDir(String string) {
-	}
 
 }
