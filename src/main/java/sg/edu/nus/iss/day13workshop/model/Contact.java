@@ -44,10 +44,10 @@ public class Contact {
 
     private String generateID(int i) {
         Random r = new Random();
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
 
         while (sb.length() < i) {
-            sb.append(Integer.toHexString(r.nextInt(i)));
+            sb.append(Integer.toHexString(r.nextInt()));
         }
 
         return sb.toString().substring(0, i);
@@ -99,7 +99,7 @@ public class Contact {
         if (dateOfBirth != null) {
             calculatedAge = Period.between(dateOfBirth, LocalDate.now()).getYears();
         }
-
+        this.age = calculatedAge;
         this.dateOfBirth = dateOfBirth;
     }
 
