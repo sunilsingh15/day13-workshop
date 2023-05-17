@@ -2,7 +2,6 @@ package sg.edu.nus.iss.day13workshop.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -55,7 +54,7 @@ public class AddressBookController {
         // }
 
         service.save(contact, model, dataDir);
-        model.addAttribute("successMessage", "Contact saved successfully. Status code: " + HttpStatus.ACCEPTED + ".");
+        model.addAttribute("successMessage", "Contact saved successfully.");
 
         return "showContact";
     }

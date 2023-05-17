@@ -10,7 +10,7 @@
 
 <body data-th-object="${contact}">
 
-    <div th:text = "${successMessage}" th:if = "${successMessage != null}" class="success-message"></div>
+    <div th:text = "${successMessage}" th:if = "${successMessage != null}" class="success-message" style="color: green;"></div>
     <br>
     <br>
 <a href="/">Back To Home</a>
@@ -20,7 +20,7 @@
     <h1>Your Contact Information</h1>
 
     <p>
-        Id:
+        ID:
         <p data-th-text="*{id}"></p>
     </p>
     <br>
