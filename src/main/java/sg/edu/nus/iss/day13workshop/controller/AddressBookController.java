@@ -8,7 +8,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import jakarta.validation.Valid;
 import sg.edu.nus.iss.day13workshop.model.Contact;
 import sg.edu.nus.iss.day13workshop.service.Contacts;
