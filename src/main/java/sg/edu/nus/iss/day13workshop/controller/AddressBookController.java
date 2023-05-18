@@ -66,7 +66,7 @@ public class AddressBookController {
         Contact contact = new Contact();
 
         contact = service.getContactByID(contactID, dataDir);
-        
+
         if (contact == null) {
             model.addAttribute("errorMessage", "Contact not found!");
             return "error";
@@ -75,5 +75,13 @@ public class AddressBookController {
         model.addAttribute("contact", contact);
         return "showContact";
     }
+
+    @GetMapping("/list")
+    public String getAllContacts(Model model) {
+
+        service.getAllContactsInURI(model, dataDir);
+        return "contacts";
+    }
+
 
 }

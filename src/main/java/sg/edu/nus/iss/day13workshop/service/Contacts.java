@@ -6,7 +6,11 @@ import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
@@ -48,5 +52,26 @@ public class Contacts {
 
         return ctc;
     }
+
+    public void getAllContactsInURI(Model model, String dataDir) {
+        Set<String> dataFiles = listFiles(dataDir);
+
+        Set<String> modifiedFiles = new HashSet<String>();
+
+        for (String file : dataFiles) {
+
+            String modifiedFile = file.replace(".txt", "");
+            modifiedFiles.add(modifiedFile);
+
+        }
+
+        model.addAttribute("contacts", modifiedFiles.toArray(new String[dataFiles.size()]));
+    }
     
+    private Set<String> listFiles(String dataDir) {
+        
+        return Stream.of(new File(dataDir).listFiles())
+        .filter(file -> !file.isDirectory())
+        .map(File :: getName).collect(Collectors.toSet());  
+    }
 }
