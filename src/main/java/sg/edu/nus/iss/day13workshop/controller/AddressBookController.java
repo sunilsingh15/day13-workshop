@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import jakarta.validation.Valid;
@@ -55,6 +56,23 @@ public class AddressBookController {
         service.save(contact, model, dataDir);
         model.addAttribute("successMessage", "Contact saved successfully.");
 
+        return "showContact";
+    }
+
+    // get mapping to retrieve contact by ID parameter passed in contact/${parameter}
+    @GetMapping("/contact/{contactID}")
+    public String getContactByID(Model model, @PathVariable String contactID) throws Exception {
+
+        Contact contact = new Contact();
+
+        contact = service.getContactByID(contactID, dataDir);
+        
+        if (contact == null) {
+            model.addAttribute("errorMessage", "Contact not found!");
+            return "error";
+        }
+
+        model.addAttribute("contact", contact);
         return "showContact";
     }
 
