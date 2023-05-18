@@ -34,6 +34,9 @@ public class Contacts {
         printWriter.close();
     }
 
+
+    
+
     public Contact getContactByID(String contactID, String dataDir) throws Exception {
         Contact ctc = new Contact();
 
