@@ -39,10 +39,6 @@ public class AddressBookController {
     @PostMapping("/contact")
     public String saveAddressBook(@Valid Contact contact, BindingResult result, Model model) throws Exception {
         
-        System.out.println("Name: " + contact.getName());
-        System.out.println("E-mail: " + contact.getEmail());
-        System.out.println("Phone Number: " + contact.getPhoneNumber());
-
         if (result.hasErrors()) {
             return "addressBook";
         }
